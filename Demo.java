@@ -125,6 +125,12 @@ class ViewCustomerForm extends JFrame {
         lblTitle.setFont(new Font("", 1, 25));
         lblTitle.setHorizontalAlignment(JLabel.CENTER);
         add("North", lblTitle);
+
+        String[] columnName = { "Customer ID", "Name", "Address", "Salary" };
+        dtm = new DefaultTableModel(columnName, 0);
+        tblCustomer = new JTable(dtm);
+        JScrollPane tablePane = new JScrollPane(tblCustomer);
+        add("Center", tablePane);
     }
 }
 
