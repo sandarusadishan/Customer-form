@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.table.*;
 import java.awt.*;
 
 class AddCustomerForm extends JFrame {
@@ -91,7 +92,6 @@ class AddCustomerForm extends JFrame {
 
     }
 }
-
 /*
  * class DeleteCustomerForm extends JFrame {
  * private JLabel lblTitle;
@@ -112,6 +112,8 @@ class AddCustomerForm extends JFrame {
 class ViewCustomerForm extends JFrame {
 
     private JLabel lblTitle;
+    private JTable tblCustomer;
+    private DefaultTableModel dtm;
 
     ViewCustomerForm() {
         setSize(400, 300);
@@ -126,17 +128,7 @@ class ViewCustomerForm extends JFrame {
     }
 }
 
-
-
-
-
-
-
-
-
-
 public class Demo {
-
     public static void main(String[] args) {
         new AddCustomerForm().setVisible(true);
         new ViewCustomerForm().setVisible(true);
