@@ -24,14 +24,14 @@ class AddCustomerForm extends JFrame {
         setLocationRelativeTo(null);
 
         lblTitle = new JLabel("Add Cutomer Form");
-        lblTitle.setFont(new Font("", 1, 30));
+        lblTitle.setFont(new Font("", 1, 25));
         lblTitle.setHorizontalAlignment(JLabel.CENTER);
         add("North", lblTitle);
 
-        //button
+        // button
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
-        btnAdd = new JButton("Add Custometr");
+        btnAdd = new JButton("Add");
         btnAdd.setFont(new Font("", 1, 20));
         buttonPanel.add(btnAdd);
 
@@ -40,7 +40,7 @@ class AddCustomerForm extends JFrame {
         buttonPanel.add(btnCancel);
 
         add("South", buttonPanel);
-//label
+        // label
         JPanel labelPanel = new JPanel(new GridLayout(4, 1));
         lblId = new JLabel("Customer ID : ");
         lblId.setFont(new Font("", 1, 20));
@@ -60,25 +60,32 @@ class AddCustomerForm extends JFrame {
 
         add("West", labelPanel);
 
-
-        //text
+        // text
         JPanel textPanel = new JPanel(new GridLayout(4, 1));
 
+        JPanel idTextJPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         txtId = new JTextField(5);
         txtId.setFont(new Font("", 1, 20));
-        textPanel.add(txtId);
+        idTextJPanel.add(txtId);
+        textPanel.add(idTextJPanel);
 
-        txtName = new JTextField(13);
-        textPanel.setFont(new Font("", 1, 20));
-        textPanel.add(txtName);
+        JPanel nameTextJPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        txtName = new JTextField(10);
+        txtName.setFont(new Font("", 1, 20));
+        nameTextJPanel.add(txtName);
+        textPanel.add(nameTextJPanel);
 
+        JPanel addreesTextJPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         txtAddress = new JTextField(13);
         txtAddress.setFont(new Font("", 1, 20));
-        textPanel.add(txtAddress);
+        addreesTextJPanel.add(txtAddress);
+        textPanel.add(addreesTextJPanel);
 
+        JPanel salaryTextJPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         txtSalary = new JTextField(6);
         txtSalary.setFont(new Font("", 1, 20));
-        textPanel.add(txtSalary);
+        salaryTextJPanel.add(txtSalary);
+        textPanel.add(salaryTextJPanel);
 
         add("East", textPanel);
 
