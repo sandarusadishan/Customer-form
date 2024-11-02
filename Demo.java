@@ -108,10 +108,37 @@ class AddCustomerForm extends JFrame {
  * }
  * }
  */
+
+class ViewCustomerForm extends JFrame {
+
+    private JLabel lblTitle;
+
+    ViewCustomerForm() {
+        setSize(400, 300);
+        setTitle("View Customer Form");
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        lblTitle = new JLabel("View Customer Form");
+        lblTitle.setFont(new Font("", 1, 25));
+        lblTitle.setHorizontalAlignment(JLabel.CENTER);
+        add("North", lblTitle);
+    }
+}
+
+
+
+
+
+
+
+
+
+
 public class Demo {
 
     public static void main(String[] args) {
         new AddCustomerForm().setVisible(true);
-        // new DeleteCustomerForm().setVisible(true);
+        new ViewCustomerForm().setVisible(true);
     }
 }
