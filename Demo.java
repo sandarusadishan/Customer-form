@@ -1,6 +1,10 @@
 import javax.swing.*;
 import javax.swing.table.*;
 import java.awt.*;
+import java.util.*;
+import java.awt.event.*;
+import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 class AddCustomerForm extends JFrame {
 
@@ -92,6 +96,7 @@ class AddCustomerForm extends JFrame {
 
     }
 }
+
 /*
  * class DeleteCustomerForm extends JFrame {
  * private JLabel lblTitle;
@@ -114,6 +119,7 @@ class ViewCustomerForm extends JFrame {
     private JLabel lblTitle;
     private JTable tblCustomer;
     private DefaultTableModel dtm;
+    private JButton btnReload;
 
     ViewCustomerForm() {
         setSize(400, 300);
@@ -131,6 +137,35 @@ class ViewCustomerForm extends JFrame {
         tblCustomer = new JTable(dtm);
         JScrollPane tablePane = new JScrollPane(tblCustomer);
         add("Center", tablePane);
+
+        Object[] rowData = { "C001", "Niroth", "Panadura", "50000" };
+        dtm.addRow(rowData);
+
+        btnReload = new JButton("Reload");
+        btnReload.setFont(new Font("", 1, 20));
+        JPanel buttoPanel = new JPanel();
+        buttoPanel.add(btnReload);
+        btnReload.addActionListener(new ActionListener() {
+            public void actionPerformed(ActiveEvent evt) {
+                Scanner input = new Scanner(System.in);
+                System.out.println("Input Customer ID : ");
+                String id = input.nextLine();
+
+                System.out.println("Input Customer Name : ");
+                String name = input.nextLine();
+
+                System.out.println("Input Customer Address : ");
+                String address = input.nextLine();
+
+                System.out.println("Input Customer Salary : ");
+                double salary = input.nextDouble();
+
+            Object[] rowData = {id,name ,address,salary};
+            dtm.addRow(rowData);
+
+            }
+        });
+        add("South", buttoPanel);
     }
 }
 
@@ -140,3 +175,4 @@ public class Demo {
         new ViewCustomerForm().setVisible(true);
     }
 }
+  
